@@ -350,7 +350,7 @@ def generate_dendrogram(graph,
     status.init(current_graph, weight, part_init)
     status_list = list()
     #TODO make sure graph has nodes.data()
-    current_graph.nodes.data()
+    print(current_graph.nodes.data())
                             
     __one_level(current_graph, status, weight, resolution, random_state)
     new_mod = __modularity(status, resolution)
