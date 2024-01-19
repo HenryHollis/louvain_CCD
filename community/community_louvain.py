@@ -349,6 +349,9 @@ def generate_dendrogram(graph,
     status = Status()
     status.init(current_graph, weight, part_init)
     status_list = list()
+    #TODO make sure graph has nodes.data()
+    current_graph.nodes.data()
+                            
     __one_level(current_graph, status, weight, resolution, random_state)
     new_mod = __modularity(status, resolution)
     partition = __renumber(status.node2com)
@@ -356,6 +359,8 @@ def generate_dendrogram(graph,
     mod = new_mod
     current_graph = induced_graph(partition, current_graph, weight)
     status.init(current_graph, weight)
+
+    
 
     while True:
         __one_level(current_graph, status, weight, resolution, random_state)
